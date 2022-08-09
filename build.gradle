@@ -1,0 +1,59 @@
+// For those who want the bleeding edge
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.0"
+group = "com.yourname.modid"
+archivesBaseName = "speedcubingMod"
+
+
+minecraft {
+    version = "1.8.9-11.15.1.2318-1.8.9"
+    runDir = "run"
+    mappings = "stable_20"
+}
+
+dependencies {
+    compile files('../sources/jar/forge-1.8.9-11.15.1.2318-1.8.9.jar')
+    compile files('../MinecraftClient/out/artifacts/Client_jar/Client.jar')
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+//jdk internal
+tasks.withType(JavaCompile){
+    configure(options){
+        options.compilerArgs.add("-XDignore.symbol.file=true")
+        options.fork = true
+        options.forkOptions.executable = 'javac'
+        options.encoding = 'utf-8'
+    }
+}
+// level 8
+apply plugin: 'java'
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
