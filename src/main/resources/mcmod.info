@@ -1,0 +1,16 @@
+[
+{
+  "modid": "speedcubing_skyblock_helper",
+  "name": "Skyblock Helper",
+  "description": "Skyblock Helper",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://speedcubing.top",
+  "updateUrl": "",
+  "authorList": ["speedcubing"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
