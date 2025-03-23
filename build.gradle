@@ -1,9 +1,13 @@
 buildscript {
     repositories {
         maven { url "https://maven.minecraftforge.net" }
+        maven { url 'https://repo.spongepowered.org/maven'}
     }
     dependencies {
         classpath "net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT"
+        classpath('org.spongepowered:mixingradle:0.6-SNAPSHOT') {
+            exclude group: 'org.spongepowered', module: 'mixingradle'
+        }
     }
 }
 
@@ -13,6 +17,7 @@ plugins {
 }
 
 apply plugin: "net.minecraftforge.gradle.forge"
+apply plugin: 'org.spongepowered.mixin'
 
 version = "1.0"
 group = "top.speedcubing" //http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -36,9 +41,17 @@ configurations {
 }
 
 repositories {
+    maven { url 'https://repo.spongepowered.org/maven/' }
 }
 
 dependencies {
+//    shade('org.spongepowered:mixin:0.7.10-SNAPSHOT') {
+//        exclude module: 'launchwrapper'
+//        exclude module: 'guava'
+//        exclude module: 'gson'
+//        exclude module: 'commons-io'
+//        exclude module: 'log4j-core'
+//    }
 }
 
 processResources {
@@ -73,4 +86,12 @@ shadowJar {
 reobf {
     //reobfuscate the shadowed jar
     shadowJar {}
+}
+
+jar {
+    manifest {
+        attributes "Manifest-Version": 1.0,
+                'FMLCorePluginContainsFMLMod': true,
+                'FMLCorePlugin': 'top.speedcubing.forge.Core'
+    }
 }

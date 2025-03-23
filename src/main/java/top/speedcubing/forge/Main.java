@@ -13,12 +13,13 @@ import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.mods.antiafk.CommandAntiAFK;
 import top.speedcubing.forge.mods.autocastle.AutoCastle;
 import top.speedcubing.forge.mods.autocastle.CommandAutoCastle;
+import top.speedcubing.forge.mods.packetlogger.PacketLogger;
 import top.speedcubing.forge.mods.toggletab.CommandToggleTab;
 import top.speedcubing.forge.mods.toggletab.ToggleTab;
 
 @Mod(modid = Main.MODID, version = Main.VERSION)
 public class Main {
-    public static final String MODID = "examplemod2";
+    public static final String MODID = "speedcubing_skyblock_helper";
     public static final String VERSION = "1.0";
     public static Logger log;
 
@@ -27,6 +28,7 @@ public class Main {
         log = LogManager.getLogger(MODID);
         new AntiAFK();
         new AutoCastle();
+        new PacketLogger();
         new ToggleTab();
         MinecraftForge.EVENT_BUS.register(new ClientConnectedToServer());
         MinecraftForge.EVENT_BUS.register(new ClientTick());

@@ -21,4 +21,8 @@ public class Helper {
     public static void chat(String message) {
         Minecraft.getMinecraft().thePlayer.sendChatMessage(message);
     }
+
+    public static void log(String message){
+        System.out.println("[SC] " + message);
+    }
 }

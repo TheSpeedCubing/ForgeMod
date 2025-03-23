@@ -9,14 +9,16 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.mods.autocastle.AutoCastle;
+import top.speedcubing.forge.mods.packetlogger.PacketLogger;
 
 public class ClientConnectedToServer {
 
-    private boolean f = false;
-
     @SubscribeEvent
     public void onClientConnectedToServer(FMLNetworkEvent.ClientConnectedToServerEvent e) {
-        e.manager.channel().pipeline().addAfter("decoder", "adwadawwda", new ChannelDuplexHandler() {
+        if (e.isLocal) {
+            return;
+        }
+        e.manager.channel().pipeline().addAfter("decoder", "speedcubing", new ChannelDuplexHandler() {
             @Override
             public void write(ChannelHandlerContext channelHandlerContext, Object byteBuf, ChannelPromise promise) throws Exception {
                 super.write(channelHandlerContext, byteBuf, promise);
@@ -24,6 +26,7 @@ public class ClientConnectedToServer {
 
             @Override
             public void channelRead(ChannelHandlerContext channelHandlerContext, Object packet) throws Exception {
+                PacketLogger.getInstance().handlePacket(packet);
                 if (packet instanceof S02PacketChat) {
                     IChatComponent chatComponent = ((S02PacketChat) packet).getChatComponent();
                     AntiAFK.getInstance().handleChatEvent(chatComponent);

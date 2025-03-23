@@ -8,7 +8,7 @@ import top.speedcubing.forge.mods.toggletab.ToggleTab;
 public class ClientTick {
 
     @SubscribeEvent
-    public void a(TickEvent.ClientTickEvent e) {
+    public void onClientTick(TickEvent.ClientTickEvent e) {
         ToggleTab.getInstance().handleClientTick(e);
         AutoCastle.getInstance().handleClientTick(e);
     }
