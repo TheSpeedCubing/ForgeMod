@@ -73,7 +73,13 @@ public class AutoCastle {
         }
 
         String s = chatComponent.getUnformattedText();
-        if (s.toLowerCase().contains("reward summary") || s.toLowerCase().contains("you have been eliminated!") || s.toLowerCase().contains("joined the lobby!")) {
+        if (s.toLowerCase().contains("reward summary") ||
+                s.toLowerCase().contains("you have been eliminated!") ||
+                s.toLowerCase().contains("joined the lobby!") ||
+                s.toLowerCase().contains("something went wrong trying to send you to that server! if this keeps happening please report it! (") ||
+                s.toLowerCase().contains("exception connecting:readtimeoutexception : null") ||
+                s.toLowerCase().contains("/limbo for more information")) {
+
             if (s.toLowerCase().contains("reward summary")) {
                 Minecraft.getMinecraft().thePlayer.sendChatMessage("gg");
             }
