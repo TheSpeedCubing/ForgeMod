@@ -10,8 +10,8 @@ import top.speedcubing.forge.listeners.ClientTick;
 import top.speedcubing.forge.listeners.KeyInput;
 import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.mods.autocastle.AutoCastle;
-import top.speedcubing.forge.mods.fovchanger.Fov;
-import top.speedcubing.forge.mods.gamma.Gamma;
+import top.speedcubing.forge.mods.fovchanger.FovChanger;
+import top.speedcubing.forge.mods.gamma.GammaChanger;
 import top.speedcubing.forge.mods.help.CommandHelp;
 import top.speedcubing.forge.mods.packetlogger.PacketLogger;
 import top.speedcubing.forge.mods.toggletab.ToggleTab;
@@ -27,8 +27,8 @@ public class Main {
         log = LogManager.getLogger(MODID);
         new AntiAFK();
         new AutoCastle();
-        new Gamma();
-        new Fov();
+        new GammaChanger();
+        new FovChanger();
         new PacketLogger();
         new ToggleTab();
 
