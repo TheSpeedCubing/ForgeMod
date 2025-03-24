@@ -2,6 +2,7 @@
 
 1.8.9 forge mod which contains some utilities.
 
+- FreeLook
 - Fov Changer
 - Gamma Changer
 - Hypixel Anti Afk
