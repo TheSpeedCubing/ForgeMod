@@ -2,22 +2,17 @@ package top.speedcubing.forge.mods.antiafk;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
+import top.speedcubing.forge.mods.CubingCommandBase;
+import top.speedcubing.forge.mods.autocastle.AutoCastle;
 
-public class CommandAntiAFK extends CommandBase {
+public class CommandAntiAFK extends CubingCommandBase {
 
-    public String getCommandName() {
-        return "antiafk";
+    public CommandAntiAFK() {
+        super("antiafk", "/antiafk");
     }
 
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return true;
-    }
-
-    public String getCommandUsage(ICommandSender sender) {
-        return "/antiafk";
-    }
-
-    public void processCommand(ICommandSender sender, String[] s) {
+    @Override
+    public void execute(ICommandSender sender, String[] s) {
         AntiAFK.getInstance().toggle();
     }
 }

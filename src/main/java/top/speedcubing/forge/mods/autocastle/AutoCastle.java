@@ -6,15 +6,18 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.IChatComponent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import top.speedcubing.forge.mods.Module;
 import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.util.Helper;
 import top.speedcubing.forge.util.KeyUtils;
 
-public class AutoCastle {
+public class AutoCastle extends Module {
 
     private static AutoCastle instance;
 
     public AutoCastle() {
+        super("AutoCastle",  new CommandAutoCastle());
+
         instance = this;
     }
 
@@ -22,18 +25,12 @@ public class AutoCastle {
         return instance;
     }
 
-    private boolean enabled = false;
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
+    @Override
     public void toggle() {
         if (!AntiAFK.getInstance().isEnabled()) {
             AntiAFK.getInstance().toggle();
         }
-        enabled = !enabled;
-        Helper.sendMessage("[SC] AutoCastle is now " + (AutoCastle.getInstance().isEnabled() ? "on" : "off"));
+        super.toggle();
     }
 
     private boolean moving1 = false;
@@ -68,7 +65,7 @@ public class AutoCastle {
     }
 
     public void handleChatEvent(IChatComponent chatComponent) {
-        if (!enabled) {
+        if (!isEnabled()) {
             return;
         }
 

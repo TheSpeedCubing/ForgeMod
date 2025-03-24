@@ -4,13 +4,15 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
+import top.speedcubing.forge.mods.Module;
 import top.speedcubing.forge.util.KeyUtils;
 
-public class ToggleTab {
+public class ToggleTab extends Module {
 
     private static ToggleTab instance;
 
     public ToggleTab() {
+        super("ToggleTab", new CommandToggleTab());
         instance = this;
     }
 
@@ -18,19 +20,10 @@ public class ToggleTab {
         return instance;
     }
 
-    private boolean enabled = false;
     private boolean state = false;
 
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void toggle() {
-        enabled = !enabled;
-    }
-
     public void handleClientTick(TickEvent.ClientTickEvent e) {
-        if (!enabled) {
+        if (!isEnabled()) {
             return;
         }
 
@@ -38,7 +31,7 @@ public class ToggleTab {
     }
 
     public void handleKeyInput(InputEvent.KeyInputEvent e) {
-        if (!enabled) {
+        if (!isEnabled()) {
             return;
         }
 

@@ -1,23 +1,16 @@
 package top.speedcubing.forge.mods.autocastle;
 
-import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
+import top.speedcubing.forge.mods.CubingCommandBase;
 
-public class CommandAutoCastle extends CommandBase {
+public class CommandAutoCastle extends CubingCommandBase {
 
-    public String getCommandName() {
-        return "autocastle";
+    public CommandAutoCastle() {
+        super("autocastle", "/autocastle");
     }
 
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return true;
-    }
-
-    public String getCommandUsage(ICommandSender sender) {
-        return "/autocastle";
-    }
-
-    public void processCommand(ICommandSender sender, String[] s) {
+    @Override
+    public void execute(ICommandSender sender, String[] s) {
         AutoCastle.getInstance().toggle();
     }
 }

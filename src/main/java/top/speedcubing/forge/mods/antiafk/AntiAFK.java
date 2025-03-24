@@ -5,13 +5,14 @@ import java.util.TimerTask;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.util.IChatComponent;
-import top.speedcubing.forge.util.Helper;
+import top.speedcubing.forge.mods.Module;
 
-public class AntiAFK {
+public class AntiAFK extends Module {
 
     private static AntiAFK instance;
 
     public AntiAFK() {
+        super("AntiAFK", new CommandAntiAFK());
         instance = this;
     }
 
@@ -19,18 +20,7 @@ public class AntiAFK {
         return instance;
     }
 
-    private boolean enabled = false;
     private boolean state = false;
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void toggle() {
-        enabled = !enabled;
-        Helper.sendMessage("[SC] AntiAFK is now " + (AntiAFK.getInstance().isEnabled() ? "on" : "off"));
-    }
-
 
     public void handleChatEvent(IChatComponent chatComponent) {
         String s = chatComponent.getUnformattedText();
