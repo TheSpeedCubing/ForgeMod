@@ -2,6 +2,7 @@
 
 1.8.9 forge mod which contains some utilities.
 
+- Gamma changer
 - Hypixel anti afk
 - Hypixel auto bedwars-castle queue
 - Head-Position fix
