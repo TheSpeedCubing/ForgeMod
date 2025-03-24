@@ -10,6 +10,7 @@ import top.speedcubing.forge.listeners.ClientTick;
 import top.speedcubing.forge.listeners.KeyInput;
 import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.mods.autocastle.AutoCastle;
+import top.speedcubing.forge.mods.fovchanger.Fov;
 import top.speedcubing.forge.mods.gamma.Gamma;
 import top.speedcubing.forge.mods.help.CommandHelp;
 import top.speedcubing.forge.mods.packetlogger.PacketLogger;
@@ -27,6 +28,7 @@ public class Main {
         new AntiAFK();
         new AutoCastle();
         new Gamma();
+        new Fov();
         new PacketLogger();
         new ToggleTab();
 

@@ -5,9 +5,9 @@ import java.util.TimerTask;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.util.IChatComponent;
-import top.speedcubing.forge.mods.Module;
+import top.speedcubing.forge.module.ToggleableModule;
 
-public class AntiAFK extends Module {
+public class AntiAFK extends ToggleableModule {
 
     private static AntiAFK instance;
 

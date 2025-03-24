@@ -2,10 +2,11 @@
 
 1.8.9 forge mod which contains some utilities.
 
-- Gamma changer
-- Hypixel anti afk
-- Hypixel auto bedwars-castle queue
-- Head-Position fix
+- Fov Changer
+- Gamma Changer
+- Hypixel Anti Afk
+- Hypixel Auto bedwars-castle Queue
+- Head-Position Fix
 - Enable TFO (TCP Fast Open)
 - Packet Logger
 - Toggle Tab 

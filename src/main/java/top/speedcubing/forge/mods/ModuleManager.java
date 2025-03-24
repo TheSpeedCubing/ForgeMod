@@ -3,6 +3,8 @@ package top.speedcubing.forge.mods;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import top.speedcubing.forge.module.Module;
+import top.speedcubing.forge.module.ToggleableModule;
 
 public class ModuleManager {
     private static final List<Module> modules = new ArrayList<>();

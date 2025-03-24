@@ -26,6 +26,10 @@ public abstract class CubingCommandBase extends CommandBase {
         return help;
     }
 
+    public void help() {
+        Helper.sendMessage(commandUsage);
+    }
+
     @Override
     public String getCommandName() {
         return commandName;

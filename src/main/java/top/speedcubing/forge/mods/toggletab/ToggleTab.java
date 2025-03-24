@@ -4,10 +4,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
-import top.speedcubing.forge.mods.Module;
+import top.speedcubing.forge.module.ToggleableModule;
 import top.speedcubing.forge.util.KeyUtils;
 
-public class ToggleTab extends Module {
+public class ToggleTab extends ToggleableModule {
 
     private static ToggleTab instance;
 

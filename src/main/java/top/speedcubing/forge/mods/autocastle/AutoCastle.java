@@ -6,12 +6,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.IChatComponent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import top.speedcubing.forge.mods.Module;
+import top.speedcubing.forge.module.ToggleableModule;
 import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.util.Helper;
 import top.speedcubing.forge.util.KeyUtils;
 
-public class AutoCastle extends Module {
+public class AutoCastle extends ToggleableModule {
 
     private static AutoCastle instance;
 

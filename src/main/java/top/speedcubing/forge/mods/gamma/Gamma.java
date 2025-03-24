@@ -1,8 +1,6 @@
 package top.speedcubing.forge.mods.gamma;
 
-import net.minecraft.client.Minecraft;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
-import top.speedcubing.forge.mods.Module;
+import top.speedcubing.forge.module.Module;
 
 public class Gamma extends Module {
 
@@ -17,23 +15,10 @@ public class Gamma extends Module {
         return instance;
     }
 
-    public float settingGamma = Minecraft.getMinecraft().gameSettings.gammaSetting;
-    public float commandGamma = Minecraft.getMinecraft().gameSettings.gammaSetting;
+    public float gamma;
 
     @Override
-    public void toggle() {
-        super.toggle();
-        if(isEnabled()) {
-            settingGamma = Minecraft.getMinecraft().gameSettings.gammaSetting;
-        } else {
-            Minecraft.getMinecraft().gameSettings.gammaSetting = settingGamma;
-        }
-    }
-
-
-    public void handleClientTick(TickEvent e) {
-        if (isEnabled()) {
-            Minecraft.getMinecraft().gameSettings.gammaSetting = commandGamma;
-        }
+    public String getStateDisplayString() {
+        return "§6(§e" + gamma + "§6)";
     }
 }
