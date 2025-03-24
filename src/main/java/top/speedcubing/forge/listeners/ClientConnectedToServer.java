@@ -10,7 +10,6 @@ import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.mods.autocastle.AutoCastle;
 import top.speedcubing.forge.mods.packetlogger.PacketLogger;
-
 public class ClientConnectedToServer {
 
     @SubscribeEvent
