@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.util.IChatComponent;
 import top.speedcubing.forge.module.ToggleableModule;
+import top.speedcubing.forge.util.Helper;
 
 public class AntiAFK extends ToggleableModule {
 
@@ -27,7 +28,7 @@ public class AntiAFK extends ToggleableModule {
         if (!s.toLowerCase().contains("you will be afk-ed in 10 seconds!")) {
             return;
         }
-        KeyBinding keyCode = state ? Minecraft.getMinecraft().gameSettings.keyBindForward : Minecraft.getMinecraft().gameSettings.keyBindBack;
+        KeyBinding keyCode = state ? Helper.getGameSettings().keyBindForward : Helper.getGameSettings().keyBindBack;
         KeyBinding.setKeyBindState(keyCode.getKeyCode(), true);
         KeyBinding.onTick(keyCode.getKeyCode());
         new Timer().schedule(new TimerTask() {

@@ -4,17 +4,19 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import top.speedcubing.forge.util.Helper;
 
-public class NetworkManagerInnerVisitor extends ClassVisitor {
-    public NetworkManagerInnerVisitor(ClassVisitor classVisitor) {
+public class NetworkManageVisitor extends ClassVisitor {
+    public NetworkManageVisitor(ClassVisitor classVisitor) {
         super(262144, classVisitor);
     }
 
+    @Override
     public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
         MethodVisitor mv = super.visitMethod(access, name, desc, signature, exceptions);
         if (name.equals("initChannel"))
             return new MethodVisitor(262144, mv) {
                 private String option;
 
+                @Override
                 public void visitFieldInsn(int opcode, String owner, String name, String desc) {
                     if (opcode == 178 && owner
                             .equals("io/netty/channel/ChannelOption") && desc
@@ -23,6 +25,7 @@ public class NetworkManagerInnerVisitor extends ClassVisitor {
                     this.mv.visitFieldInsn(opcode, owner, name, desc);
                 }
 
+                @Override
                 public void visitMethodInsn(int opcode, String owner, String name, String desc) {
                     if (opcode == 185 && owner
                             .equals("io/netty/channel/ChannelConfig") && name

@@ -2,6 +2,7 @@ package top.speedcubing.forge.mods.fovchanger;
 
 import net.minecraft.client.Minecraft;
 import top.speedcubing.forge.module.Module;
+import top.speedcubing.forge.util.Helper;
 
 public class FovChanger extends Module {
 
@@ -25,6 +26,6 @@ public class FovChanger extends Module {
 
     public void updateFov(float fov) {
         this.fov = fov;
-        Minecraft.getMinecraft().gameSettings.fovSetting = fov;
+        Helper.getGameSettings().fovSetting = fov;
     }
 }

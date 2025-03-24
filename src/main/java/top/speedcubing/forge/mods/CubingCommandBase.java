@@ -22,26 +22,26 @@ public abstract class CubingCommandBase extends CommandBase {
         ClientCommandHandler.instance.registerCommand(this);
     }
 
-    public boolean hasHelp() {
+    public final boolean hasHelp() {
         return help;
     }
 
-    public void help() {
+    public final void help() {
         Helper.sendMessage(commandUsage);
     }
 
     @Override
-    public String getCommandName() {
+    public final String getCommandName() {
         return commandName;
     }
 
     @Override
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
+    public final boolean canCommandSenderUseCommand(ICommandSender sender) {
         return true;
     }
 
     @Override
-    public String getCommandUsage(ICommandSender sender) {
+    public final String getCommandUsage(ICommandSender sender) {
         return commandUsage;
     }
 

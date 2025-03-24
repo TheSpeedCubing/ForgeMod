@@ -11,6 +11,7 @@ import top.speedcubing.forge.listeners.KeyInput;
 import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.mods.autocastle.AutoCastle;
 import top.speedcubing.forge.mods.fovchanger.FovChanger;
+import top.speedcubing.forge.mods.freelook.FreeLook;
 import top.speedcubing.forge.mods.gamma.GammaChanger;
 import top.speedcubing.forge.mods.help.CommandHelp;
 import top.speedcubing.forge.mods.packetlogger.PacketLogger;
@@ -31,7 +32,7 @@ public class Main {
         new FovChanger();
         new PacketLogger();
         new ToggleTab();
-
+        new FreeLook();
         new CommandHelp();
         MinecraftForge.EVENT_BUS.register(new ClientConnectedToServer());
         MinecraftForge.EVENT_BUS.register(new ClientTick());

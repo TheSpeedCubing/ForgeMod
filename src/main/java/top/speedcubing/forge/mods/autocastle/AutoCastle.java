@@ -42,7 +42,7 @@ public class AutoCastle extends ToggleableModule {
             EntityPlayerSP player = Helper.getPlayer();
             if (Math.abs(player.posZ) <= 157) {
                 KeyUtils.keyUp(Helper.getGameSettings().keyBindForward.getKeyCode());
-                KeyUtils.keyDown(Minecraft.getMinecraft().gameSettings.keyBindLeft.getKeyCode());
+                KeyUtils.keyDown(Helper.getGameSettings().keyBindLeft.getKeyCode());
                 moving1 = false;
                 moving2 = true;
             }
@@ -50,7 +50,7 @@ public class AutoCastle extends ToggleableModule {
         if (moving2) {
             EntityPlayerSP player = Helper.getPlayer();
             if (Math.abs(player.posX) >= 20) {
-                KeyUtils.keyUp(Minecraft.getMinecraft().gameSettings.keyBindLeft.getKeyCode());
+                KeyUtils.keyUp(Helper.getGameSettings().keyBindLeft.getKeyCode());
                 moving2 = false;
             }
         }

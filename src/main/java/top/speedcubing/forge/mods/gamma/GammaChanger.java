@@ -1,7 +1,7 @@
 package top.speedcubing.forge.mods.gamma;
 
-import net.minecraft.client.Minecraft;
 import top.speedcubing.forge.module.Module;
+import top.speedcubing.forge.util.Helper;
 
 public class GammaChanger extends Module {
 
@@ -15,6 +15,7 @@ public class GammaChanger extends Module {
     public static GammaChanger getInstance() {
         return instance;
     }
+
     @Override
     public String getStateDisplayString() {
         return "§6(§e" + gamma + "§6)";
@@ -24,6 +25,6 @@ public class GammaChanger extends Module {
 
     public void updateGamma(float fov) {
         this.gamma = fov;
-        Minecraft.getMinecraft().gameSettings.gammaSetting = gamma;
+        Helper.getGameSettings().gammaSetting = gamma;
     }
 }

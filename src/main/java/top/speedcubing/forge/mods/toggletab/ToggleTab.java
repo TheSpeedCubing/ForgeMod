@@ -1,10 +1,10 @@
 package top.speedcubing.forge.mods.toggletab;
 
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
 import top.speedcubing.forge.module.ToggleableModule;
+import top.speedcubing.forge.util.Helper;
 import top.speedcubing.forge.util.KeyUtils;
 
 public class ToggleTab extends ToggleableModule {
@@ -27,7 +27,7 @@ public class ToggleTab extends ToggleableModule {
             return;
         }
 
-        KeyUtils.set(Minecraft.getMinecraft().gameSettings.keyBindPlayerList.getKeyCode(), state);
+        KeyUtils.set(Helper.getGameSettings().keyBindPlayerList.getKeyCode(), state);
     }
 
     public void handleKeyInput(InputEvent.KeyInputEvent e) {
@@ -35,7 +35,7 @@ public class ToggleTab extends ToggleableModule {
             return;
         }
 
-        int tabCode = Minecraft.getMinecraft().gameSettings.keyBindPlayerList.getKeyCode();
+        int tabCode = Helper.getGameSettings().keyBindPlayerList.getKeyCode();
         if (Keyboard.getEventKey() == tabCode && KeyUtils.isKeyDown(tabCode)) {
             state = !state;
         }

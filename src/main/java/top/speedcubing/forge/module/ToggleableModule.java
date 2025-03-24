@@ -1,7 +1,6 @@
 package top.speedcubing.forge.module;
 
 import top.speedcubing.forge.mods.CubingCommandBase;
-import top.speedcubing.forge.mods.ModuleManager;
 
 public class ToggleableModule extends Module {
 
@@ -10,6 +9,7 @@ public class ToggleableModule extends Module {
     public ToggleableModule(String name, CubingCommandBase command) {
         super(name, command);
     }
+
     @Override
     public String getStateDisplayString() {
         return "§6(" + (isEnabled() ? "§aon" : "§coff") + "§6)";
@@ -18,6 +18,14 @@ public class ToggleableModule extends Module {
     public void toggle() {
         this.enabled = !this.enabled;
         send("is now " + (isEnabled() ? "§aon" : "§coff"));
+    }
+
+    public void disable() {
+        this.enabled = false;
+    }
+
+    public void toggleSilent() {
+        this.enabled = !this.enabled;
     }
 
 
