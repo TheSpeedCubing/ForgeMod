@@ -10,6 +10,7 @@ import top.speedcubing.forge.listeners.ClientTick;
 import top.speedcubing.forge.listeners.KeyInput;
 import top.speedcubing.forge.mods.antiafk.AntiAFK;
 import top.speedcubing.forge.mods.autocastle.AutoCastle;
+import top.speedcubing.forge.mods.chatstacking.ChatStacking;
 import top.speedcubing.forge.mods.fovchanger.FovChanger;
 import top.speedcubing.forge.mods.freelook.FreeLook;
 import top.speedcubing.forge.mods.gamma.GammaChanger;
@@ -33,6 +34,7 @@ public class Main {
         new PacketLogger();
         new ToggleTab();
         new FreeLook();
+        new ChatStacking();
         new CommandHelp();
         MinecraftForge.EVENT_BUS.register(new ClientConnectedToServer());
         MinecraftForge.EVENT_BUS.register(new ClientTick());

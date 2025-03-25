@@ -4,8 +4,9 @@ import net.minecraft.launchwrapper.IClassTransformer;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.Opcodes;
 
-public class TFOTransformer implements IClassTransformer {
+public class TFOTF implements IClassTransformer, Opcodes {
     @Override
     public byte[] transform(String name, String transformedName, byte[] bytes) {
         if (bytes == null) {
@@ -13,9 +14,9 @@ public class TFOTransformer implements IClassTransformer {
         }
         if (transformedName.startsWith("net.minecraft.network.NetworkManager$")) {
             ClassReader reader = new ClassReader(bytes);
-            ClassWriter writer = new ClassWriter(reader, 2);
-            ClassVisitor visitor = new NetworkManageVisitor(writer);
-            reader.accept(visitor, 4);
+            ClassWriter writer = new ClassWriter(reader, ClassWriter.COMPUTE_FRAMES);
+            ClassVisitor visitor = new NetworkManageCV(writer);
+            reader.accept(visitor, ClassReader.SKIP_FRAMES);
             return writer.toByteArray();
         }
         return bytes;
