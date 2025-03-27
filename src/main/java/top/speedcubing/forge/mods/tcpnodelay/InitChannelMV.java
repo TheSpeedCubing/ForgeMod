@@ -21,21 +21,17 @@ public class InitChannelMV extends MethodVisitor implements Opcodes {
     }
 
     @Override
-    public void visitMethodInsn(int opcode, String owner, String name, String desc) {
+    public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean isInterface) {
         if (opcode == INVOKEINTERFACE &&
                 // io.netty.channel.ChannelConfig : boolean setOption(ChannelOption<T> option, T value);
                 owner.equals("io/netty/channel/ChannelConfig") &&
                 name.equals("setOption") &&
                 desc.equals("(Lio/netty/channel/ChannelOption;Ljava/lang/Object;)Z") &&
                 this.option.equals("TCP_NODELAY")) {
-
-            Helper.log("Setting TCP_NODELAY to true");
-            this.mv.visitInsn(POP);
-            this.mv.visitInsn(ICONST_1);
-            this.mv.visitMethodInsn(INVOKESTATIC, "java/lang/Boolean", "valueOf", "(Z)Ljava/lang/Boolean;");
-            this.mv.visitMethodInsn(opcode, owner, name, desc);
-            return;
+            mv.visitInsn(POP);
+            mv.visitInsn(ICONST_1);
+            mv.visitMethodInsn(INVOKESTATIC, "java/lang/Boolean", "valueOf", "(Z)Ljava/lang/Boolean;", false);
         }
-        this.mv.visitMethodInsn(opcode, owner, name, desc);
+        super.visitMethodInsn(opcode, owner, name, desc, isInterface);
     }
 }

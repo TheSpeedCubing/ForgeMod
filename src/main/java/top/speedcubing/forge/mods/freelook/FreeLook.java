@@ -67,6 +67,7 @@ public class FreeLook extends ToggleableModule {
         }
     }
 
+    // for INVOKESTATIC
     public static boolean overrideMouse() {
         if (Minecraft.getMinecraft().inGameHasFocus && Display.isActive()) {
             if (!FreeLook.getInstance().isEnabled())
