@@ -2,7 +2,7 @@ package top.speedcubing.forge.mods.freelook.asm;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-public class updateCameraAndRenderMV extends MethodVisitor implements Opcodes {
+class updateCameraAndRenderMV extends MethodVisitor implements Opcodes {
     private boolean meetOnce = false;
 
     public updateCameraAndRenderMV(MethodVisitor mv) {

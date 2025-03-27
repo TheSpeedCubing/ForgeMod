@@ -3,7 +3,7 @@ package top.speedcubing.forge.mods.chatstacking;
 import net.minecraft.command.ICommandSender;
 import top.speedcubing.forge.mods.CubingCommandBase;
 
-public class CommandChatStacking  extends CubingCommandBase {
+public class CommandChatStacking extends CubingCommandBase {
 
     public CommandChatStacking() {
         super("chatstacking", "/chatstacking\n/chatstacking <format...>");

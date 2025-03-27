@@ -32,7 +32,7 @@ public class FreeLook extends ToggleableModule {
 
     @Override
     public String getStateDisplayString() {
-        return "";
+        return holdMode ? "hode" : "toggle";
     }
 
     public void holdMode() {

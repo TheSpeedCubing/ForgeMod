@@ -2,9 +2,8 @@ package top.speedcubing.forge.mods.tcpnodelay;
 
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-import top.speedcubing.forge.util.Helper;
 
-public class InitChannelMV extends MethodVisitor implements Opcodes {
+class InitChannelMV extends MethodVisitor implements Opcodes {
     public InitChannelMV(MethodVisitor mv) {
         super(ASM4, mv);
     }

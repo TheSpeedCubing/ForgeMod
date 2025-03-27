@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-public class OrientCameraMV extends MethodVisitor implements Opcodes {
+class OrientCameraMV extends MethodVisitor implements Opcodes {
     private final HashMap<String, String> obfList = Maps.newHashMap();
 
     public OrientCameraMV(MethodVisitor mv) {

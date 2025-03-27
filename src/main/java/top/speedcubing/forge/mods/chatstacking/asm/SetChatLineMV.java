@@ -3,7 +3,7 @@ package top.speedcubing.forge.mods.chatstacking.asm;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-public class SetChatLineMV extends MethodVisitor implements Opcodes {
+class SetChatLineMV extends MethodVisitor implements Opcodes {
     public SetChatLineMV(MethodVisitor mv) {
         super(ASM4, mv);
     }
