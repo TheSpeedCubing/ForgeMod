@@ -3,7 +3,7 @@ package top.speedcubing.forge.mods.gamma;
 import net.minecraft.command.ICommandSender;
 import top.speedcubing.forge.mods.CubingCommandBase;
 
-public class CommandGamma extends CubingCommandBase {
+class CommandGamma extends CubingCommandBase {
     public CommandGamma() {
         super("gamma", "/gamma <float>");
     }

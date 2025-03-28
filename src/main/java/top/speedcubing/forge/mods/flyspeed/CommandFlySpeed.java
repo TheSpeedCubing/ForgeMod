@@ -3,7 +3,7 @@ package top.speedcubing.forge.mods.flyspeed;
 import net.minecraft.command.ICommandSender;
 import top.speedcubing.forge.mods.CubingCommandBase;
 
-public class CommandFlySpeed extends CubingCommandBase {
+class CommandFlySpeed extends CubingCommandBase {
 
     public CommandFlySpeed() {
         super("flyspeed", "/flyspeed\n/flyspeed <float>");

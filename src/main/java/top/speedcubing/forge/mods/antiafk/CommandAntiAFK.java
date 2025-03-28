@@ -3,7 +3,7 @@ package top.speedcubing.forge.mods.antiafk;
 import net.minecraft.command.ICommandSender;
 import top.speedcubing.forge.mods.CubingCommandBase;
 
-public class CommandAntiAFK extends CubingCommandBase {
+class CommandAntiAFK extends CubingCommandBase {
 
     public CommandAntiAFK() {
         super("antiafk", "/antiafk");

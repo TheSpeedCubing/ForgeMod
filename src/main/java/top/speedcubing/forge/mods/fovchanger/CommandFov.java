@@ -1,10 +1,9 @@
 package top.speedcubing.forge.mods.fovchanger;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.command.ICommandSender;
 import top.speedcubing.forge.mods.CubingCommandBase;
 
-public class CommandFov extends CubingCommandBase {
+class CommandFov extends CubingCommandBase {
     public CommandFov() {
         super("fov", "/fov <float>");
     }

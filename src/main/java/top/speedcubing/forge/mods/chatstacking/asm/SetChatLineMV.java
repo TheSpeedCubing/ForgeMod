@@ -21,9 +21,9 @@ class SetChatLineMV extends MethodVisitor implements Opcodes {
             meetOnce = true;
             // (Ljava/util/List;ILnet/minecraft/client/gui/ChatLine;)V
             mv.visitMethodInsn(INVOKESTATIC, "top/speedcubing/forge/mods/chatstacking/ChatStacking", "setChatLine", "(Ljava/util/List;ILava;)V", false);
-        } else {
-            super.visitMethodInsn(opcode, owner, name, descriptor, isInterface);
+            return;
         }
+        super.visitMethodInsn(opcode, owner, name, descriptor, isInterface);
     }
 }
 

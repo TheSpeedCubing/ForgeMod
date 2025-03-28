@@ -3,7 +3,7 @@ package top.speedcubing.forge.mods.freelook;
 import net.minecraft.command.ICommandSender;
 import top.speedcubing.forge.mods.CubingCommandBase;
 
-public class CommandFreeLook extends CubingCommandBase {
+class CommandFreeLook extends CubingCommandBase {
     public CommandFreeLook() {
         super("freelook", "/freelook hold\n/freelook toggle");
     }

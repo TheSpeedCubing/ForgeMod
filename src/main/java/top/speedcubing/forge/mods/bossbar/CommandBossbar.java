@@ -3,7 +3,7 @@ package top.speedcubing.forge.mods.bossbar;
 import net.minecraft.command.ICommandSender;
 import top.speedcubing.forge.mods.CubingCommandBase;
 
-public class CommandBossbar extends CubingCommandBase {
+class CommandBossbar extends CubingCommandBase {
     public CommandBossbar() {
         super("bossbar", "/bossbar bar\n/bossbar text");
     }

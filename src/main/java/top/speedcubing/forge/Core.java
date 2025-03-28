@@ -2,9 +2,10 @@ package top.speedcubing.forge;
 
 import java.util.Map;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import top.speedcubing.forge.mods.bossbar.asm.BossbarTS;
-import top.speedcubing.forge.mods.chatstacking.asm.ChatStackingTS;
+import top.speedcubing.forge.mods.bossbar.asm.BossbarTF;
+import top.speedcubing.forge.mods.chatstacking.asm.ChatStackingTF;
 import top.speedcubing.forge.mods.freelook.asm.FreeLookTF;
+import top.speedcubing.forge.mods.hurt.asm.CameraEffectTF;
 import top.speedcubing.forge.mods.tcpnodelay.TFOTF;
 
 @IFMLLoadingPlugin.Name("Speedcubing")
@@ -15,8 +16,9 @@ public class Core implements IFMLLoadingPlugin {
         return new String[]{
                 TFOTF.class.getName(),
                 FreeLookTF.class.getName(),
-                ChatStackingTS.class.getName(),
-                BossbarTS.class.getName()
+                ChatStackingTF.class.getName(),
+                BossbarTF.class.getName(),
+                CameraEffectTF.class.getName()
         };
     }
 

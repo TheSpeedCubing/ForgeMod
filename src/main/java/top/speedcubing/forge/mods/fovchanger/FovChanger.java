@@ -1,6 +1,5 @@
 package top.speedcubing.forge.mods.fovchanger;
 
-import net.minecraft.client.Minecraft;
 import top.speedcubing.forge.module.Module;
 import top.speedcubing.forge.util.Helper;
 

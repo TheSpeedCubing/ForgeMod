@@ -49,7 +49,6 @@ public class Bossbar extends Module {
     // for INVOKESTATIC
 
     public static void renderBossHealth(GuiIngame inst) {
-        System.out.println("RENDER");
         if (BossStatus.bossName != null && BossStatus.statusBarTime > 0) {
             --BossStatus.statusBarTime;
             ScaledResolution scaledresolution = new ScaledResolution(Minecraft.getMinecraft());

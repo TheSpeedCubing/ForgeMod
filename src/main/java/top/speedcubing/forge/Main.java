@@ -18,6 +18,7 @@ import top.speedcubing.forge.mods.fovchanger.FovChanger;
 import top.speedcubing.forge.mods.freelook.FreeLook;
 import top.speedcubing.forge.mods.gamma.GammaChanger;
 import top.speedcubing.forge.mods.help.CommandHelp;
+import top.speedcubing.forge.mods.hurt.Hurt;
 import top.speedcubing.forge.mods.packetlogger.PacketLogger;
 import top.speedcubing.forge.mods.toggletab.ToggleTab;
 
@@ -32,6 +33,7 @@ public class Main {
         log = LogManager.getLogger(MODID);
         new AntiAFK();
         new AutoCastle();
+        new Hurt();
         new Bossbar();
         new GammaChanger();
         new FovChanger();
