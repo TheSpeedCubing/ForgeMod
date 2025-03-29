@@ -21,12 +21,10 @@ public class HurtCameraEffectMV extends MethodVisitor implements Opcodes {
                 && name.equals("a")
                 && descriptor.equals("(F)F")) {
             /*
-              if (top.speedcubing.forge.mods.hurt.Hurt.getInstance().isShake() {
+              if (top.speedcubing.forge.mods.hurt.Hurt.getInstance().isShake()) {
                   return;
               }
-            
-            
-             */
+            */
             mv.visitMethodInsn(INVOKESTATIC, "top/speedcubing/forge/mods/hurt/Hurt", "getInstance", "()Ltop/speedcubing/forge/mods/hurt/Hurt;", false);
             mv.visitMethodInsn(INVOKEVIRTUAL, "top/speedcubing/forge/mods/hurt/Hurt", "isShake", "()Z", false);
             Label label1 = new Label();
